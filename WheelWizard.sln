@@ -1,16 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WheelWizard", "WheelWizard\WheelWizard.csproj", "{DF73A1D9-B01E-4826-A0F3-A8105E66A931}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WheelWizard-Gtk", "WheelWizard\WheelWizard-Gtk.csproj", "{1BCDCAAA-6CCB-4374-A5FD-C9D71138BC20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WheelWizard-Forms", "WheelWizard\WheelWizard-Forms.csproj", "{7E76BAE8-82A3-4425-A1EA-5539ACDAEE7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DF73A1D9-B01E-4826-A0F3-A8105E66A931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF73A1D9-B01E-4826-A0F3-A8105E66A931}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF73A1D9-B01E-4826-A0F3-A8105E66A931}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF73A1D9-B01E-4826-A0F3-A8105E66A931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCDCAAA-6CCB-4374-A5FD-C9D71138BC20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCDCAAA-6CCB-4374-A5FD-C9D71138BC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCDCAAA-6CCB-4374-A5FD-C9D71138BC20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCDCAAA-6CCB-4374-A5FD-C9D71138BC20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E76BAE8-82A3-4425-A1EA-5539ACDAEE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E76BAE8-82A3-4425-A1EA-5539ACDAEE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E76BAE8-82A3-4425-A1EA-5539ACDAEE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E76BAE8-82A3-4425-A1EA-5539ACDAEE7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

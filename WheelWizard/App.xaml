@@ -2,21 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CT_MKWII_WPF"
-             StartupUri="Views/Layout.xaml">
+             StartupUri="WPF/Views/Layout.xaml">
     <Application.Resources>
         
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Views/Styles/Constants.xaml"/>
-                <ResourceDictionary Source="Views/Styles/OldStyle.xaml"/>
-                <ResourceDictionary Source="Views/Styles/ButtonStyles.xaml"/>
-                <ResourceDictionary Source="Views/Styles/TextStyles.xaml"/>
-                <ResourceDictionary Source="Views/Styles/CheckboxStyles.xaml"/>
-                <ResourceDictionary Source="Views/Styles/Converters.xaml"/>
-                <ResourceDictionary Source="Views/Styles/ContextMenuStyles.xaml"/>
-                <ResourceDictionary Source="Views/Styles/ScrollBarStyle.xaml"/>
-                <ResourceDictionary Source="Views/Styles/InputFieldStyles.xaml"/>
-                <ResourceDictionary Source="Views/Styles/SettingsBlockStyle.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/Constants.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/OldStyle.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/TextStyles.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/CheckboxStyles.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/Converters.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/ContextMenuStyles.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/ScrollBarStyle.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/InputFieldStyles.xaml"/>
+                <ResourceDictionary Source="WPF/Views/Styles/SettingsBlockStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         
