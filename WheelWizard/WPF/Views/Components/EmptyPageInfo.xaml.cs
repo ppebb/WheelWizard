@@ -10,7 +10,7 @@ using System.Windows.Controls;
                 Body="This page is still in development. You can expect this page to be filled with content in the future." />
  */
 
-namespace CT_MKWII_WPF.Views.Components
+namespace CT_MKWII.WPF.Views.Components
 {
     public partial class EmptyPageInfo : UserControl
     {

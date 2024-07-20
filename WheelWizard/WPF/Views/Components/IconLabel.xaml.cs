@@ -19,7 +19,7 @@ EXAMPLES:
                  IconSize="20"/>
  */
 
-namespace CT_MKWII_WPF.Views.Components
+namespace CT_MKWII.WPF.Views.Components
 {
     public partial class IconLabel : UserControl
     {

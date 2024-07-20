@@ -9,11 +9,10 @@ using System.Windows.Media.Imaging;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.ComponentModel;
-using CT_MKWII_WPF.Classes;
-using CT_MKWII_WPF.Utils;
-using static CT_MKWII_WPF.Views.ViewUtils;
+using CT_MKWII.Common;
+using static CT_MKWII.WPF.Views.ViewUtils;
 
-namespace CT_MKWII_WPF.Views.Pages
+namespace CT_MKWII.WPF.Views.Pages
 {
     public partial class RoomDetailPage : Page, INotifyPropertyChanged
     {
@@ -29,7 +28,7 @@ namespace CT_MKWII_WPF.Views.Pages
         }
 
         public ObservableCollection<KeyValuePair<string, RoomInfo.Player>> PlayersList { get; set; }
-        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -50,16 +49,16 @@ namespace CT_MKWII_WPF.Views.Pages
 
             if (timeSpan.TotalDays >= 1)
                 return $"{timeSpan.Days} day{P(timeSpan.Days)} {timeSpan.Hours} hour{P(timeSpan.Hours)}";
-           
+
             if (timeSpan.TotalHours >= 1)
                 return $"{timeSpan.Hours} hour{P(timeSpan.Hours)} {timeSpan.Minutes} minute{P(timeSpan.Minutes)}";
-        
+
             if (timeSpan.TotalMinutes >= 1)
                 return $"{timeSpan.Minutes} minute{P(timeSpan.Minutes)} {timeSpan.Seconds} second{P(timeSpan.Seconds)}";
-            
+
             return $"{timeSpan.Seconds} second{P(timeSpan.Seconds)}";
-        } 
-        
+        }
+
         private string HumanizeGameMode(string mode)
         {
             return mode switch
@@ -70,16 +69,16 @@ namespace CT_MKWII_WPF.Views.Pages
                 _ => "??"
             };
         }
-        
+
         private static int EvComparable(object? x, object? y)
         {
-            if (x is not KeyValuePair<string, RoomInfo.Player> xItem || 
+            if (x is not KeyValuePair<string, RoomInfo.Player> xItem ||
                 y is not KeyValuePair<string, RoomInfo.Player> yItem) return 0;
             if (!(int.TryParse(xItem.Value.Ev, out var xEv) &&
                   int.TryParse(yItem.Value.Ev, out var yEv))) return 0;
             return xEv.CompareTo(yEv);
         }
-        
+
         private async void setMiiImage(KeyValuePair<String, RoomInfo.Player> playerPair)
         {
             var player = playerPair.Value;
@@ -91,9 +90,9 @@ namespace CT_MKWII_WPF.Views.Pages
             {
                 try
                 {
-                    var miiImage = await miiLoader.GetMiiImageAsync(player.Mii[0].Data);
+                    var miiImage = await MiiLoader.GetMiiImageAsync(player.Mii[0].Data);
                     player.MiiImage = miiImage;
-                    Application.Current.Dispatcher.Invoke(() => OnPropertyChanged(nameof(PlayersList)) );
+                    Application.Current.Dispatcher.Invoke(() => OnPropertyChanged(nameof(PlayersList)));
                 }
                 catch (Exception ex)
                 {
@@ -104,10 +103,10 @@ namespace CT_MKWII_WPF.Views.Pages
 
         private void LoadMiiImagesAsync()
         {
-            foreach (var playerPair in PlayersList) 
+            foreach (var playerPair in PlayersList)
                 setMiiImage(playerPair);
         }
-        
+
 
         private void GoBackClick(object sender, RoutedEventArgs e) => NavigateToPage(new RoomsPage());
 
@@ -129,5 +128,5 @@ namespace CT_MKWII_WPF.Views.Pages
             }
         }
     }
-    
+
 }

@@ -5,17 +5,16 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using CT_MKWII_WPF.Classes;
-using CT_MKWII_WPF.Utils;
-using CT_MKWII_WPF.Views.Components;
-using CT_MKWII_WPF.Views.Pages;
+using CT_MKWII.Common;
+using CT_MKWII.WPF.Views.Components;
+using CT_MKWII.WPF.Views.Pages;
 
-namespace CT_MKWII_WPF.Views;
+namespace CT_MKWII.WPF.Views;
 
 public partial class Layout : Window, INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
-    
+
     public Layout()
     {
         InitializeComponent();
@@ -24,7 +23,7 @@ public partial class Layout : Window, INotifyPropertyChanged
         PopulatePlayerText();
         // Create and start the LiveAlertsManager
         LiveAlertsManager.Start(StatusIcon, UpdateStatusMessage);
-        
+
         var statusIconBorder = StatusIcon.Parent as Border;
         if (statusIconBorder != null)
             statusIconBorder.ToolTip = null;
@@ -50,7 +49,7 @@ public partial class Layout : Window, INotifyPropertyChanged
                 button.IsChecked = button.PageType == page.GetType();
         }
     }
-    
+
     private string _statusMessage;
     public string StatusMessage
     {
@@ -62,27 +61,27 @@ public partial class Layout : Window, INotifyPropertyChanged
             OnPropertyChanged();
         }
     }
-    
+
     protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
-    
+
     private void UpdateStatusMessage(string message) => Dispatcher.Invoke(() => StatusMessage = message);
 
     public async void PopulatePlayerText()
     {
-        var rrInfo = await RRLiveInfo.getCurrentGameData();
+        var rrInfo = await RRLiveInfo.GetCurrentGameData();
         UpdatePlayerAndRoomCount(RRLiveInfo.GetCurrentOnlinePlayers(rrInfo), rrInfo.Rooms.Count);
-        
+
         var periodicTimer = new PeriodicTimer(TimeSpan.FromSeconds(20));
         while (await periodicTimer.WaitForNextTickAsync())
         {
-            rrInfo = await RRLiveInfo.getCurrentGameData();
+            rrInfo = await RRLiveInfo.GetCurrentGameData();
             UpdatePlayerAndRoomCount(RRLiveInfo.GetCurrentOnlinePlayers(rrInfo), rrInfo.Rooms.Count);
         }
     }
-    
+
     public void UpdatePlayerAndRoomCount(int playerCount, int roomCount)
     {
         PlayerCountBox.Text = playerCount.ToString();
@@ -100,15 +99,15 @@ public partial class Layout : Window, INotifyPropertyChanged
             _ => $"There are currently {roomCount} rooms active"
         };
     }
-    
+
     private void TopBar_MouseDown(object sender, MouseButtonEventArgs e)
     {
         if (e.ChangedButton == MouseButton.Left) DragMove();
     }
-    
+
     private void MinimizeButton_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
     private void CloseButton_Click(object sender, RoutedEventArgs e) => Close();
-    
+
     private void Discord_Click(object sender, RoutedEventArgs e)
     {
         System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
@@ -119,7 +118,7 @@ public partial class Layout : Window, INotifyPropertyChanged
     }
 
     private void Github_Click(object sender, RoutedEventArgs e)
-    {  
+    {
         System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
         {
             FileName = "https://github.com/patchzyy/WheelWizard",

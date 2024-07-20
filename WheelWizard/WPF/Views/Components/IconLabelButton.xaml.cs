@@ -14,7 +14,7 @@ using System.Windows.Media;
                  Click="YourClickHandler"/>
  */
 
-namespace CT_MKWII_WPF.Views.Components
+namespace CT_MKWII.WPF.Views.Components
 {
     public partial class IconLabelButton : System.Windows.Controls.Button
     {

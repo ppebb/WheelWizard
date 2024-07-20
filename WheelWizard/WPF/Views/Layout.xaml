@@ -5,14 +5,14 @@ https://github.com/MahApps/MahApps.Metro.IconPacks
 https://game-icons.net/1x1/delapouite/flat-tire.html
 https://game-icons.net/1x1/delapouite/car-wheel.html
 -->
-<Window x:Class="CT_MKWII_WPF.Views.Layout"
+<Window x:Class="CT_MKWII.WPF.Views.Layout"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:components="clr-namespace:CT_MKWII_WPF.Views.Components"
-        xmlns:local="clr-namespace:CT_MKWII_WPF.Views.Pages"
+        xmlns:components="clr-namespace:CT_MKWII.WPF.Views.Components"
+        xmlns:local="clr-namespace:CT_MKWII.WPF.Views.Pages"
         mc:Ignorable="d"
         Title="Wheel Wizard" Height="876" Width="656"
         WindowStyle='None'

@@ -20,7 +20,7 @@ EXAMPLES:
 # Note1:  you either need to find the icon, or set IconSize to 0 to hide it
  */
 
-namespace CT_MKWII_WPF.Views.Components
+namespace CT_MKWII.WPF.Views.Components
 {
     public partial class Button : System.Windows.Controls.Button
     {

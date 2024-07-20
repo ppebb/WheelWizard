@@ -1,9 +1,9 @@
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Input;
-using static CT_MKWII_WPF.Views.ViewUtils;
+using static CT_MKWII.WPF.Views.ViewUtils;
 
-namespace CT_MKWII_WPF.Views.Components
+namespace CT_MKWII.WPF.Views.Components
 {
     public class BaseListView : ListView
     {

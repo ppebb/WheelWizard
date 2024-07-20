@@ -1,11 +1,11 @@
 using System.Windows.Controls;
 
-namespace CT_MKWII_WPF.Views;
+namespace CT_MKWII.WPF.Views;
 using System.Windows.Media;
 using System.Windows;
     
 // when using any of the utils, import using:
-//  using static CT_MKWII_WPF.Views.ViewUtils;
+//  using static CT_MKWII.WPF.Views.ViewUtils;
 
 public static class ViewUtils
 {

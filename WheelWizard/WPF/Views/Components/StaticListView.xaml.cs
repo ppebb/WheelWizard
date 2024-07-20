@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using MahApps.Metro.IconPacks;
 
-namespace CT_MKWII_WPF.Views.Components;
+namespace CT_MKWII.WPF.Views.Components;
 
 
 public partial class StaticListView : BaseListView

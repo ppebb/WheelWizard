@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace CT_MKWII_WPF.Pages;
+namespace CT_MKWII.WPF.Pages;
 
 public partial class ProgressWindow : Window
 {

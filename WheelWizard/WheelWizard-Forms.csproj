@@ -3,9 +3,10 @@
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net7.0-windows</TargetFramework>
-        <RootNamespace>CT_MKWII_WPF</RootNamespace>
+        <RootNamespace>CT_MKWII.WPF</RootNamespace>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <IS_WIN>true</IS_WIN>
     </PropertyGroup>
 
     <ItemGroup>

@@ -24,7 +24,6 @@
         <Compile Remove="App.xaml.cs" />
         <Compile Remove="App.xaml" />
         <Compile Remove="WPF\**\*" />
-        <Compile Remove="Common\**\*" />
     </ItemGroup>
 
     <!-- Shut up NETSDK1136: The target platform must be set to Windows. Excluding the files somehow doesn't prevent this -->

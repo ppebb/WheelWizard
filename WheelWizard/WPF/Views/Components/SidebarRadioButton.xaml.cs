@@ -2,10 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using CT_MKWII_WPF.Views.Pages;
-using static CT_MKWII_WPF.Views.ViewUtils;
+using CT_MKWII.WPF.Views.Pages;
+using static CT_MKWII.WPF.Views.ViewUtils;
 
-namespace CT_MKWII_WPF.Views.Components;
+namespace CT_MKWII.WPF.Views.Components;
 
 /*
 EXAMPLES:

@@ -1,15 +1,13 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using CT_MKWII_WPF.Utils;
-using CT_MKWII_WPF.Utils.DolphinHelpers;
 using MahApps.Metro.IconPacks;
 using System.Threading.Tasks;
-using CT_MKWII_WPF.Classes;
-using CT_MKWII_WPF.Enums;
-using static CT_MKWII_WPF.Views.ViewUtils;
-using Button = CT_MKWII_WPF.Views.Components.Button;
+using CT_MKWII.Common;
+using CT_MKWII.Common.DolphinHelpers;
+using static CT_MKWII.WPF.Views.ViewUtils;
+using Button = CT_MKWII.WPF.Views.Components.Button;
 
-namespace CT_MKWII_WPF.Views.Pages;
+namespace CT_MKWII.WPF.Views.Pages;
 
 public partial class Dashboard : Page
 {
@@ -31,7 +29,7 @@ public partial class Dashboard : Page
     //         Dispatcher.Invoke(() => MainMii.Source = task.Result);
     //     });
     // }
-    
+
     private async void PlayButton_Click(object sender, RoutedEventArgs e)
     {
         ActionButtonStatus status = await RRStatusManager.GetCurrentStatus();
@@ -65,7 +63,7 @@ public partial class Dashboard : Page
         UpdateActionButton();
         DisableAllButtonsTemporarily();
     }
-    
+
     private async void UpdateActionButton()
     {
         ActionButtonStatus status = await RRStatusManager.GetCurrentStatus();
@@ -99,14 +97,14 @@ public partial class Dashboard : Page
                 break;
         }
 
-        if (!SettingsUtils.configCorrectAndExists())
+        if (!SettingsUtils.ConfigCorrectAndExists())
         {
             DolphinButton.IsEnabled = false;
             MiiButton.IsEnabled = false;
             OnlineTTCheckbox.IsEnabled = false;
         }
     }
-    
+
     private void SetButtonState(string text, Button.ButtonsVariantType variant, PackIconMaterialKind iconKind, bool enabled = true, bool subButtonsEnabled = true)
     {
         PlayButton.Text = text;
@@ -117,7 +115,7 @@ public partial class Dashboard : Page
         MiiButton.IsEnabled = subButtonsEnabled;
         DolphinButton.IsEnabled = subButtonsEnabled;
     }
-    
+
     private void SetButtonState(string text, Button.ButtonsVariantType variant, PackIconFontAwesomeKind iconKind, bool enabled = true, bool subButtonsEnabled = true)
     {
         PlayButton.Text = text;
@@ -128,7 +126,7 @@ public partial class Dashboard : Page
         MiiButton.IsEnabled = subButtonsEnabled;
         DolphinButton.IsEnabled = subButtonsEnabled;
     }
-    
+
     private void DisableSidebarButtons() => GetLayout().SidePanelButtons.IsEnabled = false;
     private void EnableSidebarButtons() => GetLayout().SidePanelButtons.IsEnabled = true;
 
@@ -136,21 +134,21 @@ public partial class Dashboard : Page
     {
         DolphinSettingHelper.LaunchDolphin();
         DisableAllButtonsTemporarily();
-    } 
+    }
     private void MiiButton_OnClick(object sender, RoutedEventArgs e)
     {
         WiiMoteSettings.EnableVirtualWiiMote();
-        MiiChannelManager.LaunchMiiChannel(); 
+        MiiChannelManager.LaunchMiiChannel();
         DisableAllButtonsTemporarily();
     }
-    
+
     private void DisableAllButtonsTemporarily()
     {
         CompleteGrid.IsEnabled = false;
         //wait 5 seconds before re-enabling the buttons
         Task.Delay(5000).ContinueWith(_ =>
         {
-            Dispatcher.Invoke(() => CompleteGrid.IsEnabled = true );
+            Dispatcher.Invoke(() => CompleteGrid.IsEnabled = true);
         });
     }
 }
